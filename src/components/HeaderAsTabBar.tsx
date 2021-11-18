@@ -15,7 +15,7 @@ export const HeaderAsTabBar: React.FC = () => {
   const dispatch = useAppDispatch();
   const selectedMenu = useAppSelector(state=>state.app.selectedSection);
   return (
-    <div className="fixed md:top-0 border-[1px] border-t-black/20 md:border-0 bottom-0 h-[60px] w-full flex items-center justify-between">
+    <div className="fixed md:top-0 border-[1px] md:border-0 border-t-black/20 bottom-0 h-[60px] w-full flex items-center justify-between">
       {/* left section */}
       <div className="ml-[30px] md:block hidden">Cuzknothz</div>
       {/* right section - nav */}

@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import _ from 'lodash';
 import Link from 'next/link'
 import { appRoutes } from '@/routes';
+import { NextPage } from 'next';
 
 const bigTitleVariants = {
   hidden: {
-    y: '100px',
+    y: '100%',
   },
   visible: {
     y: 0,
@@ -43,7 +44,7 @@ const parentVariants2 = {
   },
 };
 
-const About = () => {
+const AboutMePage:NextPage = () => {
   return (
     <motion.div
       variants={topParentVariants}
@@ -81,4 +82,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutMePage;

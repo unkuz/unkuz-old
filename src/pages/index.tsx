@@ -42,6 +42,11 @@ const HomePage:NextPage = () => {
     <OrbitControls addEventListener={undefined} hasEventListener={undefined} removeEventListener={undefined} dispatchEvent={undefined}/>
   </Canvas> 
       <OverLay/>
+      <div className="absolute inset-0 flex justify-center items-center ">
+        <div className=" font-gt md:text-lg text-xs">
+          🚧  This website is currently under maintenance 🚧 
+        </div>
+      </div>
      
     </div>
   )
