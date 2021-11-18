@@ -23,17 +23,17 @@ export const HeaderAsTabBar: React.FC = () => {
       <div className="flex space-x-10 md:mr-[30px] md:justify-end justify-evenly items-center h-full w-full md:w-auto">
         <div onClick={() => dispatch(selected(SelectedMenu.HOME))}>
           <Link href={appRoutes.HOME} passHref>
-            <a className="flex flex-col items-center relative group">
+            <div className="flex flex-col items-center relative group">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
                 {selectedMenu === SelectedMenu.HOME ? <HomeIcon_Selected /> : <HomeIcon />}
               </div>
               <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">Home</div>
-            </a>
+            </div>
           </Link>
         </div>
         <div onClick={() => dispatch(selected(SelectedMenu.ALLWORKS))}>
           <Link href={appRoutes.ALLWORKS} passHref>
-            <a className="flex flex-col items-center relative group">
+            <div className="flex flex-col items-center relative group">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
                 {selectedMenu === SelectedMenu.ALLWORKS ? (
                   <AllWorksIcon_Selected />
@@ -43,17 +43,17 @@ export const HeaderAsTabBar: React.FC = () => {
               </div>
 
               <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">All works</div>
-            </a>
+            </div>
           </Link>
         </div>
         <div onClick={() => dispatch(selected(SelectedMenu.ABOUT))}>
           <Link href={appRoutes.ABOUT} passHref>
-            <a className="flex flex-col items-center relative group">
+            <div className="flex flex-col items-center relative group">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
                 {selectedMenu === SelectedMenu.ABOUT ? <AboutIcon_Selected /> : <AboutIcon />}
               </div>
               <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">About Me</div>
-            </a>
+            </div>
           </Link>
         </div>
       </div>
