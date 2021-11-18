@@ -13,46 +13,46 @@ import { selected, SelectedMenu } from '@/store/reducers/appSlice';
 
 export const HeaderAsTabBar: React.FC = () => {
   const dispatch = useAppDispatch();
-  const selectedMenu = useAppSelector(state=>state.app.selectedSection);
+  const selectedMenu = useAppSelector((state) => state.app.selectedSection);
   return (
     <div className="fixed md:top-0 border-[1px] md:border-0 border-t-black/20 bottom-0 h-[60px] w-full flex items-center justify-between">
       {/* left section */}
       <div className="ml-[30px] md:block hidden">Cuzknothz</div>
       {/* right section - nav */}
 
-      <div className="flex space-x-8 md:mr-[30px] md:justify-end justify-evenly items-center h-full w-full md:w-auto">
-        <div onClick={()=>dispatch(selected(SelectedMenu.HOME))}>
+      <div className="flex space-x-10 md:mr-[30px] md:justify-end justify-evenly items-center h-full w-full md:w-auto">
+        <div onClick={() => dispatch(selected(SelectedMenu.HOME))}>
           <Link href={appRoutes.HOME} passHref>
-            <a className="flex flex-col items-center">
+            <a className="flex flex-col items-center relative">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
-                  { selectedMenu === SelectedMenu.HOME? <HomeIcon_Selected/>:<HomeIcon />}
-                
+                {selectedMenu === SelectedMenu.HOME ? <HomeIcon_Selected /> : <HomeIcon />}
               </div>
-              <p className="font-gt text-xs">Home</p>
+              <div className="font-gt text-xs absolute top-[23px] w-[70px] flex justify-center items-center">Home</div>
             </a>
           </Link>
         </div>
-        <div onClick={()=>dispatch(selected(SelectedMenu.ALLWORKS))}>
+        <div onClick={() => dispatch(selected(SelectedMenu.ALLWORKS))}>
           <Link href={appRoutes.ALLWORKS} passHref>
-            <a className="flex flex-col items-center">
+            <a className="flex flex-col items-center relative">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
-                 { selectedMenu === SelectedMenu.ALLWORKS? <AllWorksIcon_Selected/>: <AllWorksIcon />}
-               
+                {selectedMenu === SelectedMenu.ALLWORKS ? (
+                  <AllWorksIcon_Selected />
+                ) : (
+                  <AllWorksIcon />
+                )}
               </div>
 
-              <p className="font-gt text-xs">All works</p>
+              <div className="font-gt text-xs absolute top-[23px] w-[70px] flex justify-center items-center">All works</div>
             </a>
           </Link>
         </div>
-        <div onClick={()=>dispatch(selected(SelectedMenu.ABOUT))}>
+        <div onClick={() => dispatch(selected(SelectedMenu.ABOUT))}>
           <Link href={appRoutes.ABOUT} passHref>
-            <a className="flex flex-col items-center">
+            <a className="flex flex-col items-center relative">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
-                { selectedMenu === SelectedMenu.ABOUT ?<AboutIcon_Selected/>: <AboutIcon />}
-                
-               
+                {selectedMenu === SelectedMenu.ABOUT ? <AboutIcon_Selected /> : <AboutIcon />}
               </div>
-              <p className="font-gt text-xs">About Me</p>
+              <div className="font-gt text-xs absolute top-[23px] w-[70px] flex justify-center items-center">About Me</div>
             </a>
           </Link>
         </div>
