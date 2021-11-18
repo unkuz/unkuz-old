@@ -7,8 +7,9 @@ import { HeaderAsTabBar } from '@/components/HeaderAsTabBar';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-     
+      
       <Component {...pageProps} />
+       <div className="z-50">   <HeaderAsTabBar/></div>
     </Provider>
   );
 }

@@ -8,7 +8,7 @@ const OverLay: React.FC = () => {
     <div>
       {/* Hambuger Menu */}
       {/* <HambugerButton/> */}
-       <HeaderAsTabBar/>
+       {/* <HeaderAsTabBar/> */}
     </div>
   );
 };

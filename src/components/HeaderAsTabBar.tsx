@@ -8,8 +8,12 @@ import AboutIcon_Selected from '@/assets/svg/about_selected.svg';
 import AllWorksIcon_Selected from '@/assets/svg/allworks_selected.svg';
 import { appRoutes } from '@/routes';
 import Link from 'next/link';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { selected, SelectedMenu } from '@/store/reducers/appSlice';
 
 export const HeaderAsTabBar: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const selectedMenu = useAppSelector(state=>state.app.selectedSection);
   return (
     <div className="fixed md:top-0 border-[1px] border-t-black/20 md:border-0 bottom-0 h-[60px] w-full flex items-center justify-between">
       {/* left section */}
@@ -17,32 +21,36 @@ export const HeaderAsTabBar: React.FC = () => {
       {/* right section - nav */}
 
       <div className="flex space-x-8 md:mr-[30px] md:justify-end justify-evenly items-center h-full w-full md:w-auto">
-        <div>
+        <div onClick={()=>dispatch(selected(SelectedMenu.HOME))}>
           <Link href={appRoutes.HOME} passHref>
             <a className="flex flex-col items-center">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
-                <HomeIcon />
+                  { selectedMenu === SelectedMenu.HOME? <HomeIcon_Selected/>:<HomeIcon />}
+                
               </div>
               <p className="font-gt text-xs">Home</p>
             </a>
           </Link>
         </div>
-        <div>
+        <div onClick={()=>dispatch(selected(SelectedMenu.ALLWORKS))}>
           <Link href={appRoutes.ALLWORKS} passHref>
             <a className="flex flex-col items-center">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
-                <AllWorksIcon />
+                 { selectedMenu === SelectedMenu.ALLWORKS? <AllWorksIcon_Selected/>: <AllWorksIcon />}
+               
               </div>
 
               <p className="font-gt text-xs">All works</p>
             </a>
           </Link>
         </div>
-        <div>
+        <div onClick={()=>dispatch(selected(SelectedMenu.ABOUT))}>
           <Link href={appRoutes.ABOUT} passHref>
             <a className="flex flex-col items-center">
               <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
-                <AboutIcon />
+                { selectedMenu === SelectedMenu.ABOUT ?<AboutIcon_Selected/>: <AboutIcon />}
+                
+               
               </div>
               <p className="font-gt text-xs">About Me</p>
             </a>

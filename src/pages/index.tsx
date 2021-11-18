@@ -1,3 +1,4 @@
+import { HeaderAsTabBar } from '@/components/HeaderAsTabBar'
 import { Loading } from '@/components/Loading'
 import { Loader, OrbitControls, Scroll, ScrollControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
@@ -41,6 +42,7 @@ const HomePage:NextPage = () => {
     <OrbitControls addEventListener={undefined} hasEventListener={undefined} removeEventListener={undefined} dispatchEvent={undefined}/>
   </Canvas> 
       <OverLay/>
+     
     </div>
   )
 }
