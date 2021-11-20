@@ -18,7 +18,11 @@ export const HeaderAsTabBar: React.FC = () => {
   return (
     <div className="fixed md:top-0 border-[1px] md:border-0 border-t-black/20 bottom-0 h-[60px] w-full flex items-center justify-between">
       {/* left section */}
-      <div className="ml-[30px] md:block hidden">Cuzknothz</div>
+      <Link href={appRoutes.HOME} passHref>
+        <div className="ml-[30px] md:flex hidden font-august text-2xl tracking-wider w-auto h-full justify-center items-center md:cursor-pointer">
+          {'cuzknothz'.toUpperCase()}
+        </div>
+      </Link>
       {/* right section - nav */}
 
       <div className="flex space-x-10 md:mr-[30px] md:justify-end justify-evenly items-center h-full w-full md:w-auto">
@@ -26,9 +30,7 @@ export const HeaderAsTabBar: React.FC = () => {
           <Link href={appRoutes.HOME} passHref>
             <div className="flex flex-col items-center relative group">
               <div
-                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer ${
-                  isMainSection && 'invert'
-                }`}
+                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer`}
               >
                 {selectedMenu === SelectedMenu.HOME ? <HomeIcon_Selected /> : <HomeIcon />}
               </div>
@@ -42,9 +44,7 @@ export const HeaderAsTabBar: React.FC = () => {
           <Link href={appRoutes.ALLWORKS} passHref>
             <div className="flex flex-col items-center relative group">
               <div
-                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer ${
-                  isMainSection && 'invert'
-                }`}
+                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer`}
               >
                 {selectedMenu === SelectedMenu.ALLWORKS ? (
                   <AllWorksIcon_Selected />
@@ -63,9 +63,7 @@ export const HeaderAsTabBar: React.FC = () => {
           <Link href={appRoutes.ABOUT} passHref>
             <div className="flex flex-col items-center relative group">
               <div
-                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer ${
-                  isMainSection && 'invert'
-                }`}
+                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer`}
               >
                 {selectedMenu === SelectedMenu.ABOUT ? <AboutIcon_Selected /> : <AboutIcon />}
               </div>

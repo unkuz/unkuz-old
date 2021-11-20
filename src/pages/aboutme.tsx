@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import _ from 'lodash';
-import Link from 'next/link'
+import Link from 'next/link';
 import { appRoutes } from '@/routes';
 import { NextPage } from 'next';
 
@@ -18,14 +18,13 @@ const bigTitleVariants = {
 };
 const topParentVariants = {
   hidden: {
-    y:0
+    y: 0,
   },
   visible: {
-    y:'-1000px',
+    y: '-1000px',
     transition: {
       type: 'tween',
-      duration: 30
- 
+      duration: 30,
     },
   },
 };
@@ -48,7 +47,7 @@ const parentVariants2 = {
   },
 };
 
-const AboutMePage:NextPage = () => {
+const AboutMePage: NextPage = () => {
   return (
     <motion.div
       variants={topParentVariants}
@@ -56,9 +55,6 @@ const AboutMePage:NextPage = () => {
       animate="visible"
       className="absolute inset-0 flex flex-col justify-center items-center"
     >
-        <Link href={appRoutes.HOME} passHref> 
-        <div className="absolute top-0 left-0 md:cursor-pointer ">{"<"}</div>
-        </Link>
       <motion.div variants={parentVariants} className="flex overflow-hidden outline-title">
         {'cuzknothz'
           .toUpperCase()
@@ -66,7 +62,7 @@ const AboutMePage:NextPage = () => {
           .map((i) => (
             <motion.div
               key={i}
-              className="md:text-6xl text-4xl outline-title text-transparent select-none"
+              className="md:text-9xl text-7xl font-august outline-title text-transparent select-none"
               variants={bigTitleVariants}
             >
               {i}
@@ -76,7 +72,11 @@ const AboutMePage:NextPage = () => {
       <div className="h-[10px]"></div>
       <motion.div variants={parentVariants2} className="flex overflow-hidden">
         {_.split('Font-end Developer', '').map((i) => (
-          <motion.div key={i} className="md:text-sm text-xs select-none" variants={bigTitleVariants}>
+          <motion.div
+            key={i}
+            className="md:text-sm text-xs select-none"
+            variants={bigTitleVariants}
+          >
             {i}
           </motion.div>
         ))}

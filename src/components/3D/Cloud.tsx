@@ -10,14 +10,16 @@ function Loader() {
   return <Html center>{progress} % loaded</Html>;
 }
 export const Cloud = () => {
-  const [videoTexture] = useState(() =>
-    Object.assign(document.createElement('video'), {
-      src: '/cloud.mp4',
-      crossOrigin: 'Anonymous',
-      loop: true,
-      autoplay: true,
-      muted: true,
-    })
+  const videoTexture = useMemo(
+    () =>
+      Object.assign(document.createElement('video'), {
+        src: '/cloud.mp4',
+        crossOrigin: 'Anonymous',
+        loop: true,
+        autoplay: true,
+        muted: true,
+      }),
+    []
   );
   useEffect(() => {
     videoTexture.play();
@@ -29,7 +31,7 @@ export const Cloud = () => {
       {!isMainSection && (
         <Suspense fallback={<Loader />}>
           <mesh>
-            <planeBufferGeometry args={[19.2 / 1.4, 10.8 / 1.4]} />
+            <planeBufferGeometry args={[19.2 / 4.5, 10.8 / 4.5]} />
             <meshBasicMaterial>
               <videoTexture attach="map" args={[videoTexture]} encoding={THREE.sRGBEncoding} />
             </meshBasicMaterial>

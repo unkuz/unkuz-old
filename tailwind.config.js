@@ -24,6 +24,7 @@ module.exports = {
     },
     fontFamily: {
       gt: ['gt'],
+      august: ['august'],
     },
   },
   variants: {

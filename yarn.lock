@@ -4494,6 +4494,11 @@ modern-normalize@^1.1.0:
   resolved "https://registry.yarnpkg.com/modern-normalize/-/modern-normalize-1.1.0.tgz#da8e80140d9221426bd4f725c6e11283d34f90b7"
   integrity sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==
 
+moussejs@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/moussejs/-/moussejs-1.0.3.tgz#40c8cc3260fc6d083504abfc08fb02fcd7ba16d0"
+  integrity sha512-rHiyVVu6kXPnHB5Nl/sQ0ihyBowpBj8b20dnmcWAJvZ4xqFet+rSLyg8Yz+0fdlYKIhyFSvdhJo7/qkC0Cu62Q==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"

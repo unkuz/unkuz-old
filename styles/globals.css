@@ -59,6 +59,10 @@ canvas {
   font-family: gt;
   src: url(../public/GT-Walsheim-Medium-subset.woff2);
 }
+@font-face {
+  font-family: august;
+  src: url(../public/602d0d76ac6fe41e789e0053_august-bold.woff2);
+}
 /* @font-face {
   font-family: gt;
   src: url(../public/GT-Walsheim-Regular-subset.woff2);
@@ -68,7 +72,7 @@ canvas {
   font-size: 16px;
 }
 .outline-title {
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 3px black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

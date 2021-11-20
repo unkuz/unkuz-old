@@ -9,6 +9,7 @@ import { ReactReduxContext, Provider } from 'react-redux';
 import { Cuzknothz } from '@/components/3D/Cuzknothz';
 import Tree from '@/components/3Dmodels/Tree';
 import { Scene } from '@/components/scene/Scene';
+import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
 
 const HomePage: NextPage = () => {
   return (
@@ -17,15 +18,15 @@ const HomePage: NextPage = () => {
         {({ store }) => (
           <>
             <Canvas
-              orthographic
-              gl={{ alpha: false }}
+              // orthographic
+              // gl={{ alpha: false }}
               camera={{ zoom: 100, position: [0, 0, 100] }}
               // frameloop="demand"
             >
               <Provider store={store}>
                 <Suspense fallback={null}>
                   <Cloud />
-                  <Scene />
+                  {/* <Scene /> */}
                   {/* <Cuzknothz /> */}
                 </Suspense>
                 <OrbitControls />

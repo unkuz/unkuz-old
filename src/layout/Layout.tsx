@@ -9,7 +9,7 @@ export const Layout: React.FC = ({ children }) => {
       {/* header */}
 
       {children}
-      {isMainSection && <HeaderAsTabBar />}
+      {<HeaderAsTabBar />}
     </>
   );
 };
