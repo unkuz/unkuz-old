@@ -8,7 +8,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontSize: {
-      xs: '.6rem',
+      xss: '.6rem',
+      xs: '.75rem',
       sm: '.875rem',
       tiny: '.875rem',
       base: '1rem',
@@ -20,6 +21,7 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
       '7xl': '5rem',
+      '2k': '8rem',
     },
     extend: {
       keyframes: {

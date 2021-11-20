@@ -62,7 +62,7 @@ const AboutMePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🚧 About Me 🚧</title>
+        <title>About Me 🧬</title>
       </Head>
       <motion.div
         variants={topParentVariants}

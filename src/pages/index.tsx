@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>🚧 Cuzknothz 🚧</title>
+        <title>Cuzknothz 🧊</title>
       </Head>
       <ReactReduxContext.Consumer>
         {({ store }) => (
