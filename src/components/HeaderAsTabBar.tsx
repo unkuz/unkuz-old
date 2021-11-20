@@ -14,6 +14,7 @@ import { selected, SelectedMenu } from '@/store/reducers/appSlice';
 export const HeaderAsTabBar: React.FC = () => {
   const dispatch = useAppDispatch();
   const selectedMenu = useAppSelector((state) => state.app.selectedSection);
+  const isMainSection = useAppSelector((state) => state.app.mainSection);
   return (
     <div className="fixed md:top-0 border-[1px] md:border-0 border-t-black/20 bottom-0 h-[60px] w-full flex items-center justify-between">
       {/* left section */}
@@ -24,17 +25,27 @@ export const HeaderAsTabBar: React.FC = () => {
         <div onClick={() => dispatch(selected(SelectedMenu.HOME))}>
           <Link href={appRoutes.HOME} passHref>
             <div className="flex flex-col items-center relative group">
-              <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
+              <div
+                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer ${
+                  isMainSection && 'invert'
+                }`}
+              >
                 {selectedMenu === SelectedMenu.HOME ? <HomeIcon_Selected /> : <HomeIcon />}
               </div>
-              <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">Home</div>
+              <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
+                Home
+              </div>
             </div>
           </Link>
         </div>
         <div onClick={() => dispatch(selected(SelectedMenu.ALLWORKS))}>
           <Link href={appRoutes.ALLWORKS} passHref>
             <div className="flex flex-col items-center relative group">
-              <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
+              <div
+                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer ${
+                  isMainSection && 'invert'
+                }`}
+              >
                 {selectedMenu === SelectedMenu.ALLWORKS ? (
                   <AllWorksIcon_Selected />
                 ) : (
@@ -42,17 +53,25 @@ export const HeaderAsTabBar: React.FC = () => {
                 )}
               </div>
 
-              <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">All works</div>
+              <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
+                All works
+              </div>
             </div>
           </Link>
         </div>
         <div onClick={() => dispatch(selected(SelectedMenu.ABOUT))}>
           <Link href={appRoutes.ABOUT} passHref>
             <div className="flex flex-col items-center relative group">
-              <div className="relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer">
+              <div
+                className={`relative md:w-[22px] md:h-[22px] w-[25px] h-[25px] object-cover md:cursor-pointer ${
+                  isMainSection && 'invert'
+                }`}
+              >
                 {selectedMenu === SelectedMenu.ABOUT ? <AboutIcon_Selected /> : <AboutIcon />}
               </div>
-              <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">About Me</div>
+              <div className="font-gt text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
+                About Me
+              </div>
             </div>
           </Link>
         </div>

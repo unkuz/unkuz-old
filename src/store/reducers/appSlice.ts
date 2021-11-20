@@ -1,18 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export enum SelectedMenu{
-  HOME= "HOME",
-  ABOUT ="ABOUT",
-  ALLWORKS ="ALLWORKS"
+export enum SelectedMenu {
+  HOME = 'HOME',
+  ABOUT = 'ABOUT',
+  ALLWORKS = 'ALLWORKS',
 }
-interface AppState{
-  showMenu:boolean;
-  selectedSection:SelectedMenu
+interface AppState {
+  showMenu: boolean;
+  selectedSection: SelectedMenu;
+  mainSection: boolean;
 }
 
-const initialState:AppState = {
+const initialState: AppState = {
   showMenu: false,
   selectedSection: SelectedMenu.HOME,
+  mainSection: false,
 };
 
 const appSlice = createSlice({
@@ -25,7 +27,10 @@ const appSlice = createSlice({
     selected: (state, action) => {
       state.selectedSection = action.payload;
     },
+    goMainSection: (state) => {
+      state.mainSection = true;
+    },
   },
 });
-export const { toggleShowMenu,selected } = appSlice.actions;
+export const { toggleShowMenu, selected, goMainSection } = appSlice.actions;
 export const appReducer = appSlice.reducer;

@@ -1,55 +1,42 @@
-import { HeaderAsTabBar } from '@/components/HeaderAsTabBar'
-import { Loading } from '@/components/Loading'
-import { Loader, OrbitControls, Scroll, ScrollControls } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import { EffectComposerContext, Glitch } from '@react-three/postprocessing'
-import { NextPage } from 'next'
-import React, { Suspense } from 'react'
-import OverLay from '../components/OverLay'
+import { Cloud } from '@/components/3D/Cloud';
+import { CloundCustom } from '@/components/3D/Clound';
+import { OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { NextPage } from 'next';
+import React, { Suspense } from 'react';
+import OverLay from '../components/OverLay';
+import { ReactReduxContext, Provider } from 'react-redux';
+import { Cuzknothz } from '@/components/3D/Cuzknothz';
+import Tree from '@/components/3Dmodels/Tree';
+import { Scene } from '@/components/scene/Scene';
 
-const HomePage:NextPage = () => {
+const HomePage: NextPage = () => {
   return (
-    <div>
-      <Canvas orthographic camera={{ zoom: 100, position: [0, 0, 100] }} frameloop="demand" >
-           <ScrollControls damping={5} horizontal pages={1}>
-     
+    <>
+      <ReactReduxContext.Consumer>
+        {({ store }) => (
+          <>
+            <Canvas
+              orthographic
+              gl={{ alpha: false }}
+              camera={{ zoom: 100, position: [0, 0, 100] }}
+              // frameloop="demand"
+            >
+              <Provider store={store}>
+                <Suspense fallback={null}>
+                  <Cloud />
+                  <Scene />
+                  {/* <Cuzknothz /> */}
+                </Suspense>
+                <OrbitControls />
+              </Provider>
+            </Canvas>
+            <OverLay />
+          </>
+        )}
+      </ReactReduxContext.Consumer>
+    </>
+  );
+};
 
-    <ambientLight /> 
-    <pointLight position={[10, 10, 10]} />
-    <directionalLight intensity={4.16} />
-    <Suspense fallback={<Loading/>}>
-      
-           <Scroll>
-
-        
-    <mesh>
-      <planeBufferGeometry/>
-      <meshStandardMaterial/>
-    </mesh>
-    <mesh position={[2,2,2]}>
-      <planeBufferGeometry/>
-      <meshStandardMaterial/>
-    </mesh>   </Scroll>
-   
-    </Suspense>
-     </ScrollControls>
-    <Loader
-
-  dataInterpolation={(p) => `Loading ${p.toFixed(2)}%`} // Text
-  initialState={(active) => active} // Initial black out state
-></Loader>
-
-    <OrbitControls addEventListener={undefined} hasEventListener={undefined} removeEventListener={undefined} dispatchEvent={undefined}/>
-  </Canvas> 
-      <OverLay/>
-      <div className="absolute inset-0 flex justify-center items-center ">
-        <div className=" font-gt md:text-lg text-xs">
-          🚧  This website is currently under maintenance 🚧 
-        </div>
-      </div>
-     
-    </div>
-  )
-}
-
-export default HomePage
+export default HomePage;

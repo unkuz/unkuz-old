@@ -17,10 +17,14 @@ const bigTitleVariants = {
   },
 };
 const topParentVariants = {
-  hidden: {},
+  hidden: {
+    y:0
+  },
   visible: {
+    y:'-1000px',
     transition: {
       type: 'tween',
+      duration: 30
  
     },
   },
