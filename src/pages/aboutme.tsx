@@ -15,6 +15,17 @@ const bigTitleVariants = {
     },
   },
 };
+const smallTitleVariants = {
+  hidden: {
+    y: '100%',
+  },
+  visible: {
+    y: 0,
+    transition: {
+      type: 'tween',
+    },
+  },
+};
 const topParentVariants = {
   hidden: {
     y: 0,
@@ -42,6 +53,7 @@ const parentVariants2 = {
     transition: {
       type: 'tween',
       staggerChildren: 0.05,
+      delay: 2,
     },
   },
 };
@@ -58,27 +70,24 @@ const AboutMePage: NextPage = () => {
         animate="visible"
         className="absolute inset-0 flex flex-col justify-center items-center"
       >
-        <motion.div variants={parentVariants} className="flex overflow-hidden outline-title">
-          {'cuzknothz'
-            .toUpperCase()
-            .split('')
-            .map((i) => (
-              <motion.div
-                key={i}
-                className="md:text-9xl text-7xl font-august outline-title text-transparent select-none"
-                variants={bigTitleVariants}
-              >
-                {i}
-              </motion.div>
-            ))}
+        <motion.div variants={parentVariants} className="flex overflow-hidden cuzknothz">
+          {_.split('Cuzknothz'.toUpperCase(), '').map((i) => (
+            <motion.div
+              key={i}
+              className="md:text-9xl text-7xl font-august outline-title text-transparent select-none"
+              variants={bigTitleVariants}
+            >
+              {i}
+            </motion.div>
+          ))}
         </motion.div>
         <div className="h-[10px]"></div>
         <motion.div variants={parentVariants2} className="flex overflow-hidden">
-          {_.split('Font-end Developer', '').map((i) => (
+          {_.split('Font-end_Developer', '').map((i) => (
             <motion.div
               key={i}
-              className="md:text-sm text-xs select-none"
-              variants={bigTitleVariants}
+              className="md:text-sm text-xs select-none font-neutra"
+              variants={smallTitleVariants}
             >
               {i}
             </motion.div>

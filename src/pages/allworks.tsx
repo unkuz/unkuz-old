@@ -1,3 +1,4 @@
+import { Cards } from '@/components/3D/Cards';
 import { Cloud } from '@/components/3D/Cloud';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -18,18 +19,16 @@ const AllWorksPage: NextPage = () => {
         {({ store }) => (
           <>
             <Canvas
-              // orthographic
+              orthographic
               // gl={{ alpha: false }}
               camera={{ zoom: 100, position: [0, 0, 100] }}
               // frameloop="demand"
             >
               <Provider store={store}>
                 <Suspense fallback={null}>
-                  <Cloud />
-                  {/* <Scene /> */}
-                  {/* <Cuzknothz /> */}
+                  <Cards />
                 </Suspense>
-                <OrbitControls />
+                {/* <OrbitControls /> */}
               </Provider>
             </Canvas>
             <OverLay />

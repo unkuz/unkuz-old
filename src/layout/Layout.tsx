@@ -1,4 +1,5 @@
 import { HeaderAsTabBar } from '@/components/HeaderAsTabBar';
+import useWindowDimensions from '@/components/hooks/useWindowDimensions';
 import { useAppSelector } from '@/store';
 import React from 'react';
 

@@ -27,13 +27,6 @@
   scrollbar-width: thin;
 }
 
-@font-face {
-  font-family: externalFont;
-  src: url(/GT-Walsheim-Regular-subset.woff2);
-}
-* {
-  font-family: 'externalFont';
-}
 canvas {
   width: 100vw;
   height: 100vh;
@@ -68,7 +61,7 @@ canvas {
   src: url(../public/GT-Walsheim-Regular-subset.woff2);
 } */
 * {
-  font-family: neutra;
+  font-family: gt;
   font-size: 16px;
 }
 .outline-title {
@@ -80,6 +73,14 @@ canvas {
   -webkit-background-clip: text;
   background-clip: text;
   animation: back 5s linear infinite;
+}
+.cuzknothz {
+  -webkit-text-stroke: 3px black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 @keyframes back {
   100% {
