@@ -4,6 +4,7 @@ import _ from 'lodash';
 import Link from 'next/link';
 import { appRoutes } from '@/routes';
 import { NextPage } from 'next';
+import Head from 'next/head';
 
 const bigTitleVariants = {
   hidden: {
@@ -49,40 +50,45 @@ const parentVariants2 = {
 
 const AboutMePage: NextPage = () => {
   return (
-    <motion.div
-      variants={topParentVariants}
-      initial="hidden"
-      animate="visible"
-      className="absolute inset-0 flex flex-col justify-center items-center"
-    >
-      <motion.div variants={parentVariants} className="flex overflow-hidden outline-title">
-        {'cuzknothz'
-          .toUpperCase()
-          .split('')
-          .map((i) => (
+    <>
+      <Head>
+        <title>About Me</title>
+      </Head>
+      <motion.div
+        variants={topParentVariants}
+        initial="hidden"
+        animate="visible"
+        className="absolute inset-0 flex flex-col justify-center items-center"
+      >
+        <motion.div variants={parentVariants} className="flex overflow-hidden outline-title">
+          {'cuzknothz'
+            .toUpperCase()
+            .split('')
+            .map((i) => (
+              <motion.div
+                key={i}
+                className="md:text-9xl text-7xl font-august outline-title text-transparent select-none"
+                variants={bigTitleVariants}
+              >
+                {i}
+              </motion.div>
+            ))}
+        </motion.div>
+        <div className="h-[10px]"></div>
+        <motion.div variants={parentVariants2} className="flex overflow-hidden">
+          {_.split('Font-end Developer', '').map((i) => (
             <motion.div
               key={i}
-              className="md:text-9xl text-7xl font-august outline-title text-transparent select-none"
+              className="md:text-sm text-xs select-none"
               variants={bigTitleVariants}
             >
               {i}
             </motion.div>
           ))}
+        </motion.div>
+        <div></div>
       </motion.div>
-      <div className="h-[10px]"></div>
-      <motion.div variants={parentVariants2} className="flex overflow-hidden">
-        {_.split('Font-end Developer', '').map((i) => (
-          <motion.div
-            key={i}
-            className="md:text-sm text-xs select-none"
-            variants={bigTitleVariants}
-          >
-            {i}
-          </motion.div>
-        ))}
-      </motion.div>
-      <div></div>
-    </motion.div>
+    </>
   );
 };
 

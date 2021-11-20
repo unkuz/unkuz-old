@@ -10,10 +10,13 @@ import { Cuzknothz } from '@/components/3D/Cuzknothz';
 import Tree from '@/components/3Dmodels/Tree';
 import { Scene } from '@/components/scene/Scene';
 import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
-
+import Head from 'next/head';
 const HomePage: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Cuzknothz</title>
+      </Head>
       <ReactReduxContext.Consumer>
         {({ store }) => (
           <>
