@@ -8,12 +8,10 @@ class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
           <meta name="theme-color" content="#000000"></meta>
-
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/gh/mohamedfrindi/Mouse.js/dist/css/mouse.css"
           />
-
           <script
             defer
             type="text/javascript"
