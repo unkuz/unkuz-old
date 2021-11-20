@@ -1,21 +1,16 @@
 import { Cloud } from '@/components/3D/Cloud';
-import { CloundCustom } from '@/components/3D/Clound';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { NextPage } from 'next';
-import React, { Suspense } from 'react';
-import OverLay from '../components/OverLay';
-import { ReactReduxContext, Provider } from 'react-redux';
-import { Cuzknothz } from '@/components/3D/Cuzknothz';
-import Tree from '@/components/3Dmodels/Tree';
-import { Scene } from '@/components/scene/Scene';
-import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing';
 import Head from 'next/head';
+import React, { Suspense } from 'react';
+import { Provider, ReactReduxContext } from 'react-redux';
+import OverLay from '../components/OverLay';
 const HomePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Cuzknothz</title>
+        <title>🚧 Cuzknothz 🚧</title>
       </Head>
       <ReactReduxContext.Consumer>
         {({ store }) => (

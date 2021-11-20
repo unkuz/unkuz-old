@@ -1,8 +1,8 @@
-import React from 'react';
+import { appRoutes } from '@/routes';
 import { motion } from 'framer-motion';
 import _ from 'lodash';
-import Link from 'next/link'
-import { appRoutes } from '@/routes';
+import Link from 'next/link';
+import React from 'react';
 
 const bigTitleVariants = {
   hidden: {
@@ -20,7 +20,6 @@ const topParentVariants = {
   visible: {
     transition: {
       type: 'tween',
- 
     },
   },
 };
@@ -51,9 +50,9 @@ export const Loading = () => {
       animate="visible"
       className="absolute inset-0 flex flex-col justify-center items-center"
     >
-        <Link href={appRoutes.HOME} passHref> 
-        <div className="absolute top-0 left-0 md:cursor-pointer ">{"<"}</div>
-        </Link>
+      <Link href={appRoutes.HOME} passHref>
+        <div className="absolute top-0 left-0 md:cursor-pointer ">{'<'}</div>
+      </Link>
       <motion.div variants={parentVariants} className="flex overflow-hidden outline-title">
         {'cuzknothz'
           .toUpperCase()
@@ -80,5 +79,3 @@ export const Loading = () => {
     </motion.div>
   );
 };
-
-

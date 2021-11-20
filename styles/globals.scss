@@ -78,6 +78,7 @@ canvas {
   text-rendering: optimizeLegibility;
   background: url(../public/back.png);
   -webkit-background-clip: text;
+  background-clip: text;
   animation: back 5s linear infinite;
 }
 @keyframes back {

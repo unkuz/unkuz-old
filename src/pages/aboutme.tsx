@@ -1,10 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import _ from 'lodash';
-import Link from 'next/link';
-import { appRoutes } from '@/routes';
 import { NextPage } from 'next';
 import Head from 'next/head';
+import React from 'react';
 
 const bigTitleVariants = {
   hidden: {
@@ -52,7 +50,7 @@ const AboutMePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>About Me</title>
+        <title>🚧 About Me 🚧</title>
       </Head>
       <motion.div
         variants={topParentVariants}

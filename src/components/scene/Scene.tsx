@@ -1,17 +1,11 @@
 import { useAppSelector } from '@/store';
 import { useHelper } from '@react-three/drei';
-import { Cloud } from '@/components/3D/Cloud';
-import { useControls } from 'leva';
-import React, { Suspense, useRef, useMemo } from 'react';
-import { DirectionalLightHelper, PointLightHelper } from 'three';
-import { Cuzknothz } from '../3D/Cuzknothz';
-import { Beach } from '../3Dmodels/Beach';
-import Tree from '../3Dmodels/Tree';
-import { Object3D } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
+import { useControls } from 'leva';
+import React, { Suspense, useMemo, useRef } from 'react';
 import * as THREE from 'three';
-// @ts-ignore
-import lerp from 'lerp';
+import { DirectionalLightHelper, Object3D, PointLightHelper } from 'three';
+import { Beach } from '../3Dmodels/Beach';
 import { TV } from '../3Dmodels/TV';
 
 extend({ Object3D });

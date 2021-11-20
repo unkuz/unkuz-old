@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
 import { appRoutes } from '@/routes';
+import Link from 'next/link';
+import React from 'react';
 
 export const MenuPopUp: React.FC = () => {
   return (
@@ -8,7 +8,9 @@ export const MenuPopUp: React.FC = () => {
       <div className="w-[600px] flex flex-col items-center">
         <Link href={appRoutes.HOME} passHref>
           <div className="w-full hover:bg-yellow-300 h-[70px] flex justify-center items-center md:cursor-pointer">
-            <p className="outline-title text-4xl outline-title text-transparent select-none	">Home</p>
+            <p className="outline-title text-4xl outline-title text-transparent select-none	">
+              Home
+            </p>
           </div>
         </Link>
         <Link href={appRoutes.ALLWORKS} passHref>

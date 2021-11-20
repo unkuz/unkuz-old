@@ -1,14 +1,11 @@
-import React, { useRef } from 'react';
-import { HambugerButton } from './HambugerButton';
-import { HeaderAsTabBar } from './HeaderAsTabBar';
+import React from 'react';
 
 const OverLay: React.FC = () => {
- 
   return (
     <div>
       {/* Hambuger Menu */}
       {/* <HambugerButton/> */}
-       {/* <HeaderAsTabBar/> */}
+      {/* <HeaderAsTabBar/> */}
     </div>
   );
 };

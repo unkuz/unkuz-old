@@ -1,11 +1,8 @@
-import '../../styles/globals.css';
-import type { AppProps } from 'next/app';
-import { store } from '@/store';
-import { Provider } from 'react-redux';
-import { HeaderAsTabBar } from '@/components/HeaderAsTabBar';
-import { Canvas } from '@react-three/fiber';
 import { Layout } from '@/layout/Layout';
-import { useLayoutEffect } from 'react';
+import { store } from '@/store';
+import type { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import '../../styles/globals.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // useLayoutEffect(() => {

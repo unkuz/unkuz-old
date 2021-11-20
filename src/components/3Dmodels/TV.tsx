@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/store';
 import { goMainSection } from '@/store/reducers/appSlice';
 import { Html, useProgress } from '@react-three/drei';
-import React, { Suspense, useEffect, useMemo, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import * as THREE from 'three';
 
 function Loader() {

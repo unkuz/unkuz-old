@@ -1,7 +1,7 @@
-import React, { useRef, useState, FC } from 'react';
 import { MenuPopUp } from '@/components/MenuPopUp';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { toggleShowMenu } from '@/store/reducers/appSlice';
+import React, { FC, useRef } from 'react';
 
 export const HambugerButton: FC = () => {
   const hambugerButton = useRef<HTMLDivElement>(null);

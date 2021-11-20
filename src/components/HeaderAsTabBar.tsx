@@ -19,7 +19,10 @@ export const HeaderAsTabBar: React.FC = () => {
     <div className="fixed md:top-0 border-[1px] md:border-0 border-t-black/20 bottom-0 h-[60px] w-full flex items-center justify-between">
       {/* left section */}
       <Link href={appRoutes.HOME} passHref>
-        <div className="ml-[30px] md:flex hidden font-august text-2xl tracking-wider w-auto h-full justify-center items-center md:cursor-pointer">
+        <div
+          onClick={() => dispatch(selected(SelectedMenu.HOME))}
+          className="ml-[30px] md:flex hidden font-august text-2xl tracking-wider w-auto h-full justify-center items-center md:cursor-pointer"
+        >
           {'cuzknothz'.toUpperCase()}
         </div>
       </Link>
