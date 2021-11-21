@@ -71,9 +71,9 @@ const AboutMePage: NextPage = () => {
         className="absolute inset-0 flex flex-col justify-center items-center"
       >
         <motion.div variants={parentVariants} className="flex overflow-hidden cuzknothz">
-          {_.split('Cuzknothz'.toUpperCase(), '').map((i) => (
+          {_.split('Cuzknothz'.toUpperCase(), '').map((i, idx) => (
             <motion.div
-              key={i}
+              key={idx}
               className="md:text-9xl text-7xl font-august outline-title text-transparent select-none"
               variants={bigTitleVariants}
             >
@@ -83,10 +83,10 @@ const AboutMePage: NextPage = () => {
         </motion.div>
         <div className="h-[10px]"></div>
         <motion.div variants={parentVariants2} className="flex overflow-hidden">
-          {_.split('Font-end_Developer', '').map((i) => (
+          {_.split('Font-end Developer', '').map((i, idx) => (
             <motion.div
-              key={i}
-              className="md:text-sm text-xs select-none font-neutra"
+              key={idx}
+              className="md:text-sm text-xs select-none font-neutra min-w-[5px]"
               variants={smallTitleVariants}
             >
               {i}

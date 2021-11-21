@@ -36,7 +36,15 @@ const AllWorksPage: NextPage = () => {
     }
     return window.removeEventListener('wheel', onWheel);
   }, [canvas, dispatch, onWheel]);
-
+  const onResize = () => {
+    if (canvas.current) {
+      canvas.current.width = window.innerWidth;
+      canvas.current.height = window.innerHeight;
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('resize', onResize);
+  }, []);
   return (
     <>
       <Head>
