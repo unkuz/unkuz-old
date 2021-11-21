@@ -44,6 +44,7 @@ const AllWorksPage: NextPage = () => {
   };
   useEffect(() => {
     window.addEventListener('resize', onResize);
+    return window.removeEventListener('resize', onResize);
   }, []);
   return (
     <>

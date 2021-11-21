@@ -3,20 +3,21 @@ import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import React, { Suspense, useRef, useEffect } from 'react';
+import React, { Suspense, useRef, useEffect, useCallback, useLayoutEffect } from 'react';
 import { Provider, ReactReduxContext } from 'react-redux';
 import OverLay from '../components/OverLay';
 const HomePage: NextPage = () => {
   const canvas = useRef<HTMLCanvasElement>(null);
-  const onResize = () => {
+  const onResize = useCallback(() => {
     if (canvas.current) {
       canvas.current.width = window.innerWidth;
       canvas.current.height = window.innerHeight;
     }
-  };
-  useEffect(() => {
-    window.addEventListener('resize', onResize);
   }, []);
+  useLayoutEffect(() => {
+    window.addEventListener('resize', onResize);
+    return window.removeEventListener('resize', onResize);
+  }, [onResize]);
   return (
     <>
       <Head>
@@ -38,7 +39,7 @@ const HomePage: NextPage = () => {
                   {/* <Scene /> */}
                   {/* <Cuzknothz /> */}
                 </Suspense>
-                <OrbitControls />
+                {/* <OrbitControls /> */}
               </Provider>
             </Canvas>
             <OverLay />
