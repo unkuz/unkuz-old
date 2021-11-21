@@ -74,7 +74,7 @@ const AboutMePage: NextPage = () => {
           {_.split('Cuzknothz'.toUpperCase(), '').map((i, idx) => (
             <motion.div
               key={idx}
-              className="md:text-9xl text-7xl font-august outline-title text-transparent select-none"
+              className="md:text-9xl text-7xl font-august cuzknothz text-transparent select-none"
               variants={bigTitleVariants}
             >
               {i}

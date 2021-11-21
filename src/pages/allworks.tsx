@@ -36,15 +36,18 @@ const AllWorksPage: NextPage = () => {
     }
     return window.removeEventListener('wheel', onWheel);
   }, [canvas, dispatch, onWheel]);
-  const onResize = () => {
-    if (canvas.current) {
-      canvas.current.width = window.innerWidth;
-      canvas.current.height = window.innerHeight;
-    }
-  };
+
   useEffect(() => {
+    const onResize = () => {
+      if (canvas.current) {
+        canvas.current.width = window.innerWidth;
+        canvas.current.height = window.innerHeight;
+      }
+    };
     window.addEventListener('resize', onResize);
-    return window.removeEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
   return (
     <>

@@ -8,16 +8,19 @@ import { Provider, ReactReduxContext } from 'react-redux';
 import OverLay from '../components/OverLay';
 const HomePage: NextPage = () => {
   const canvas = useRef<HTMLCanvasElement>(null);
-  const onResize = useCallback(() => {
-    if (canvas.current) {
-      canvas.current.width = window.innerWidth;
-      canvas.current.height = window.innerHeight;
-    }
-  }, []);
+
   useLayoutEffect(() => {
+    const onResize = () => {
+      if (canvas.current) {
+        canvas.current.width = window.innerWidth;
+        canvas.current.height = window.innerHeight;
+      }
+    };
     window.addEventListener('resize', onResize);
-    return window.removeEventListener('resize', onResize);
-  }, [onResize]);
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
+  }, []);
   return (
     <>
       <Head>
