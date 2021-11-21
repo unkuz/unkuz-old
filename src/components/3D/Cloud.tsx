@@ -36,14 +36,14 @@ export const Cloud = () => {
               <videoTexture attach="map" args={[videoTexture]} encoding={THREE.sRGBEncoding} />
             </meshBasicMaterial>
           </mesh>
-          <Html>
+          <Html center>
             <div
               onClick={() => {
                 dispatch(goMainSection());
               }}
-              className="md:cursor-pointer font-gt"
+              className="md:cursor-pointer font-gt select-none"
             >
-              <p className="select-none">{'Explore'}</p>
+              Explore
             </div>
           </Html>
         </Suspense>
