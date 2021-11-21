@@ -83,7 +83,7 @@ const AboutMePage: NextPage = () => {
         </motion.div>
         <div className="h-[10px]"></div>
         <motion.div variants={parentVariants2} className="flex overflow-hidden">
-          {_.split('Font-end Developer', '').map((i, idx) => (
+          {_.split('Front-end Developer', '').map((i, idx) => (
             <motion.div
               key={idx}
               className="md:text-sm text-xs select-none font-neutra min-w-[5px]"
