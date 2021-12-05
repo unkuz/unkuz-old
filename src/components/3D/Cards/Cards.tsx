@@ -19,7 +19,7 @@ export const Cards = () => {
   const card = useRef<THREE.Mesh>();
   let scaleCardRatio = new THREE.Vector3(1, 1, 1);
   let vec = useMemo(() => new THREE.Vector3(0.0, 0.0, 0.0), []);
-  let vecPlus = useMemo(() => new THREE.Vector3(0.0, 5.0, 0.0), []);
+  let vecPlus = useMemo(() => new THREE.Vector3(10.0, 0.0, 0.0), []);
   useFrame(({ clock }) => {
     if (userWheel === Wheel.DOWN) {
       if (card.current) {
@@ -62,20 +62,22 @@ export const Cards = () => {
             <>
               {selected === idx ? (
                 <>
-                  <group
-                    key={idx}
-                    position={[0, 0 - idx * 20.0, 0]}
-                    scale={scaleCardRatio}
-                    rotation={[0, 0, 0.3]}
-                  >
-                    <Card />
-                  </group>
+                  <Center>
+                    <group
+                      key={idx}
+                      position={[0 - idx * 20.0, 0.0, 0]}
+                      scale={scaleCardRatio}
+                      rotation={[0, 0, 0.3]}
+                    >
+                      <Card />
+                    </group>
+                  </Center>
                 </>
               ) : (
                 <>
                   <group
                     key={idx}
-                    position={[0, 0 - idx * 20.0, 0]}
+                    position={[0 - idx * 20.0, 0, 0]}
                     scale={scaleCardRatio}
                     rotation={[0, 0, 0.3]}
                   >

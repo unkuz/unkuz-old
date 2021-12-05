@@ -24,7 +24,7 @@ const AllWorksPage: NextPage = () => {
       if (e.wheelDeltaY < 0) {
         dispatch(setWheel(Wheel.DOWN));
       }
-      setTimeout(() => {
+      const timmer = setTimeout(() => {
         dispatch(cancelWheel());
       }, 500);
     },

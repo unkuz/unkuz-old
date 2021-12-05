@@ -70,7 +70,7 @@ const AboutMePage: NextPage = () => {
         animate="visible"
         className="absolute inset-0 flex flex-col justify-center items-center"
       >
-        <motion.div variants={parentVariants} className="flex overflow-hidden cuzknothz">
+        <motion.div variants={parentVariants} className="flex overflow-hidden">
           {_.split('Cuzknothz'.toUpperCase(), '').map((i, idx) => (
             <motion.div
               key={idx}
@@ -83,7 +83,29 @@ const AboutMePage: NextPage = () => {
         </motion.div>
         <div className="h-[10px]"></div>
         <motion.div variants={parentVariants2} className="flex overflow-hidden">
-          {_.split('Front-end Developer', '').map((i, idx) => (
+          {_.split('Front-end Developer, ', '').map((i, idx) => (
+            <motion.div
+              key={idx}
+              className="md:text-sm text-xs select-none font-neutra min-w-[5px]"
+              variants={smallTitleVariants}
+            >
+              {i}
+            </motion.div>
+          ))}
+        </motion.div>
+        <motion.div variants={parentVariants2} className="flex overflow-hidden">
+          {_.split('Hard-Dance Music Producer', '').map((i, idx) => (
+            <motion.div
+              key={idx}
+              className="md:text-sm text-xs select-none font-neutra min-w-[5px]"
+              variants={smallTitleVariants}
+            >
+              {i}
+            </motion.div>
+          ))}
+        </motion.div>
+        <motion.div variants={parentVariants2} className="flex overflow-hidden">
+          {_.split('From VietNam', '').map((i, idx) => (
             <motion.div
               key={idx}
               className="md:text-sm text-xs select-none font-neutra min-w-[5px]"

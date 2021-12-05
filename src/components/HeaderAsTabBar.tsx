@@ -37,7 +37,7 @@ export const HeaderAsTabBar: React.FC = () => {
               >
                 {selectedMenu === SelectedMenu.HOME ? <HomeIcon_Selected /> : <HomeIcon />}
               </div>
-              <div className="font-gt text-xss md:text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
+              <div className="font-gt text-xs md:text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
                 Home
               </div>
             </div>
@@ -56,7 +56,7 @@ export const HeaderAsTabBar: React.FC = () => {
                 )}
               </div>
 
-              <div className="font-gt text-xss md:text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
+              <div className="font-gt text-xs md:text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
                 All works
               </div>
             </div>
@@ -70,7 +70,7 @@ export const HeaderAsTabBar: React.FC = () => {
               >
                 {selectedMenu === SelectedMenu.ABOUT ? <AboutIcon_Selected /> : <AboutIcon />}
               </div>
-              <div className="font-gt text-xss md:text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
+              <div className="font-gt text-xs md:text-xs absolute top-[25px] w-[70px] flex justify-center items-center md:group-hover:flex md:hidden md:bg-black/80 md:text-white md:rounded-lg md:top-[30px]">
                 About Me
               </div>
             </div>

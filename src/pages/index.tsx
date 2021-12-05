@@ -1,3 +1,4 @@
+import { Donut } from '@/components/3D/Cards/Donut';
 import { Cloud } from '@/components/3D/Cloud';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -23,9 +24,6 @@ const HomePage: NextPage = () => {
   }, []);
   return (
     <>
-      <Head>
-        <title>Cuzknothz 🧊</title>
-      </Head>
       <ReactReduxContext.Consumer>
         {({ store }) => (
           <>
@@ -39,6 +37,7 @@ const HomePage: NextPage = () => {
               <Provider store={store}>
                 <Suspense fallback={null}>
                   <Cloud />
+                  <Suspense fallback={null}>{/* <Donut position={[-0, 0, 0]} /> */}</Suspense>
                   {/* <Scene /> */}
                   {/* <Cuzknothz /> */}
                 </Suspense>

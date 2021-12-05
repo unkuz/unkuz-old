@@ -36,7 +36,7 @@ export const Cloud = () => {
               <videoTexture attach="map" args={[videoTexture]} encoding={THREE.sRGBEncoding} />
             </meshBasicMaterial>
           </mesh>
-          <Html center>
+          {/* <Html center>
             <div
               onClick={() => {
                 dispatch(goMainSection());
@@ -45,7 +45,7 @@ export const Cloud = () => {
             >
               Explore
             </div>
-          </Html>
+          </Html> */}
         </Suspense>
       )}
     </>

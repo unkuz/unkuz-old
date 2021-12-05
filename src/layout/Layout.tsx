@@ -1,7 +1,7 @@
 import { HeaderAsTabBar } from '@/components/HeaderAsTabBar';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { useAppSelector, useAppDispatch } from '@/store';
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useRouter } from 'next/router';
 import { appRoutes } from '@/routes';
 import { selected, SelectedMenu } from '@/store/reducers/appSlice';
@@ -11,7 +11,7 @@ export const Layout: React.FC = ({ children }) => {
   const router = useRouter();
   const { pathname } = router;
   console.log(pathname);
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (pathname === appRoutes.HOME) {
       dispatch(selected(SelectedMenu.HOME));
     }
