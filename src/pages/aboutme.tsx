@@ -105,7 +105,7 @@ const AboutMePage: NextPage = () => {
           ))}
         </motion.div>
         <motion.div variants={parentVariants2} className="flex overflow-hidden">
-          {_.split('From VietNam', '').map((i, idx) => (
+          {_.split('based in VietNam', '').map((i, idx) => (
             <motion.div
               key={idx}
               className="md:text-sm text-xs select-none font-neutra min-w-[5px]"
