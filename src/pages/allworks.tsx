@@ -52,7 +52,7 @@ const AllWorksPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>All Works 🛠</title>
+        <title>All Works</title>
       </Head>
 
       <ReactReduxContext.Consumer>
