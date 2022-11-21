@@ -24,6 +24,10 @@ const HomePage: NextPage = () => {
   }, []);
   return (
     <>
+          <Head>
+        <title>Cuzknothz</title>
+      </Head>
+
       <ReactReduxContext.Consumer>
         {({ store }) => (
           <>
