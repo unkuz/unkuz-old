@@ -4,8 +4,10 @@ import { useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 // @ts-ignore
 import glsl from 'babel-plugin-glsl/macro';
+import { useRouter } from 'next/router';
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
+import Link from 'next/link';
 
 const customShader = {
   uniforms: {
@@ -42,9 +44,10 @@ const customShader = {
 };
 
 export const Card = () => {
+  const router = useRouter();
   const [isHover, setIsHover] = useState<boolean>(false);
   const iWheel = useAppSelector((state) => state.app.userWheel);
-  const texturePic = useTexture('xps-g2E2NQ5SWSU-unsplash.jpg');
+  const texturePic = useTexture('instagram_clone.png');
   customShader.uniforms.uTexture.value = texturePic;
   const card = useRef<THREE.Mesh>();
   const originalScale = useMemo(() => new THREE.Vector3(1.0, 1.0, 1.0), []);
@@ -77,24 +80,30 @@ export const Card = () => {
     }
   });
 
+  const go = () => {
+    router.push('https://instagram-clone-nuxt3.vercel.app/');
+  };
+
   return (
     <>
-      <mesh
-        onPointerEnter={(e) => {
-          setIsHover((prev) => true);
-        }}
-        onPointerOut={() => {
-          setIsHover((prev) => false);
-        }}
-        ref={card}
-      >
-        <planeBufferGeometry args={[25 / 4, 10 / 4]} />
-        <shaderMaterial
-          uniforms={customShader.uniforms}
-          vertexShader={customShader.vertexShader}
-          fragmentShader={customShader.fragmentShader}
-        />
-      </mesh>
+      <Link href="https://instagram-clone-nuxt3.vercel.app/" passHref>
+        <mesh
+          onPointerEnter={(e) => {
+            setIsHover((prev) => true);
+          }}
+          onPointerOut={() => {
+            setIsHover((prev) => false);
+          }}
+          ref={card}
+        >
+          <planeBufferGeometry args={[16 / 3, 9 / 3]} />
+          <shaderMaterial
+            uniforms={customShader.uniforms}
+            vertexShader={customShader.vertexShader}
+            fragmentShader={customShader.fragmentShader}
+          />
+        </mesh>
+      </Link>
     </>
   );
 };
