@@ -62,24 +62,7 @@ canvas {
   font-family: gt;
   font-size: 16px;
 }
-.outline-title {
-  -webkit-text-stroke: 3px black;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  background: url(../public/back.png);
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: back 5s linear infinite;
-}
-.cuzknothz {
-  -webkit-text-stroke: 2px black;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
+
 @keyframes back {
   100% {
     background-position: 2000px 0px;
